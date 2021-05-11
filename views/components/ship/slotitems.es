@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import { memoize } from 'lodash'
 import FontAwesome from 'react-fontawesome'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { Tooltip, Intent, Position } from '@blueprintjs/core'
 import { compose } from 'redux'
 
@@ -49,7 +49,7 @@ const landbaseSlotitemsDataSelectorFactory = memoize((landbaseId) =>
 )
 
 export const Slotitems = compose(
-  withNamespaces(['resources']),
+  withTranslation(['resources']),
   connect((state, { shipId }) => slotitemsDataSelectorFactory(shipId)(state)),
 )(({ api_maxeq, equipsData, exslotUnlocked, t }) => (
   <SlotItems className="slotitems">
@@ -117,7 +117,7 @@ export const Slotitems = compose(
 ))
 
 export const LandbaseSlotitems = compose(
-  withNamespaces(['resources']),
+  withTranslation(['resources']),
   connect((state, { landbaseId }) => landbaseSlotitemsDataSelectorFactory(landbaseId)(state)),
 )(({ api_maxeq, api_cond, api_state, equipsData, isMini, t, className }) => (
   <SlotItems className={classNames('slotitems', className)}>

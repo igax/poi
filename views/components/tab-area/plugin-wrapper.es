@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { clipboard } from 'electron'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { Card, TextArea, Button, Intent } from '@blueprintjs/core'
 import * as Sentry from '@sentry/electron'
 
-@withNamespaces()
+@withTranslation()
 export class PluginWrap extends Component {
   state = {
     hasError: false,

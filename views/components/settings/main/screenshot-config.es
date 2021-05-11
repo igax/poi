@@ -1,6 +1,6 @@
 import React from 'react'
 import { remote } from 'electron'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { FormGroup } from '@blueprintjs/core'
 
 import { Section, Wrapper, FillAvailable } from '../components/section'
@@ -11,7 +11,7 @@ import { SwitchConfig } from '../components/switch'
 const screenshotPathExclude = [window.ROOT]
 const defaultScreenshotPath = remote.getGlobal('DEFAULT_SCREENSHOT_PATH')
 
-export const ScreenshotConfig = withNamespaces(['setting'])(({ t }) => (
+export const ScreenshotConfig = withTranslation(['setting'])(({ t }) => (
   <Section title={t('Screenshot')}>
     <Wrapper>
       <Wrapper>

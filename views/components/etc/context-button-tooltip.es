@@ -2,14 +2,14 @@
  * Generate tooltip for buttons that supports context menu user interaction
  */
 import React from 'react'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import {
   InfoTooltip,
   InfoTooltipEntry,
   InfoTooltipItem,
 } from 'views/components/etc/styled-components'
 
-export const ContextButtonTooltip = withNamespaces(['setting'])(({ left, right, t, ...props }) => (
+export const ContextButtonTooltip = withTranslation(['setting'])(({ left, right, t, ...props }) => (
   <InfoTooltip className="info-tooltip">
     <InfoTooltipEntry className="info-tooltip-entry">
       <InfoTooltipItem className="info-tooltip-item">{t('Left click')}</InfoTooltipItem>

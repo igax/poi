@@ -17,7 +17,7 @@ import {
 } from '@blueprintjs/core'
 import { get } from 'lodash'
 import { ResizableArea } from 'react-resizable-area'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { remote } from 'electron'
 import styled, { css, createGlobalStyle } from 'styled-components'
 import * as Sentry from '@sentry/electron'
@@ -262,7 +262,7 @@ const dispatchTabChangeEvent = (tabInfo, autoSwitch = false) =>
     autoSwitch,
   })
 
-@withNamespaces(['setting', 'others'])
+@withTranslation(['setting', 'others'])
 @connect((state) => ({
   plugins: state.plugins,
   doubleTabbed: get(state.config, 'poi.tabarea.double', false),

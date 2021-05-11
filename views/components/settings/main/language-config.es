@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { get, each, map } from 'lodash'
 import i18next from 'views/env-parts/i18next'
 import { HTMLSelect } from '@blueprintjs/core'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import { Section } from '../components/section'
 
@@ -15,7 +15,7 @@ const setWindowI18nLng = (language) => {
   })
 }
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 @connect((state, props) => ({
   value: get(state.config, 'poi.misc.language', window.language),
 }))

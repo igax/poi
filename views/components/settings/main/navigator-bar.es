@@ -1,7 +1,7 @@
 /* global config, getStore */
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import {
   Button,
@@ -47,7 +47,7 @@ const Control = styled.div`
   margin-left: 1em;
 `
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 export class NavigatorBar extends React.Component {
   constructor() {
     super()

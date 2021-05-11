@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { get, entries, map, max, values } from 'lodash'
 import { sync as globSync } from 'glob'
 import fetch from 'node-fetch'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import {
   InfoTooltip,
@@ -28,7 +28,7 @@ const defaultFetchOption = {
 
 const initState = {}
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 @connect((state) => ({
   version: state.fcd.version || initState,
 }))

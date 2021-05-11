@@ -1,6 +1,6 @@
 /* global config */
 import React, { useState } from 'react'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { connect } from 'react-redux'
 import { get } from 'lodash'
 import { compose } from 'redux'
@@ -15,7 +15,7 @@ const handleChangeLimit = (value) => {
 }
 
 export const LimitFps = compose(
-  withNamespaces(['setting']),
+  withTranslation(['setting']),
   connect((state) => get(state.config, 'poi.misc.limitFps')),
 )(({ t, enabled, value }) => {
   const [fps, setFps] = useState(value)

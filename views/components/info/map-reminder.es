@@ -5,7 +5,7 @@ import { ProgressBar, Position, PopoverInteractionKind, Intent, Button } from '@
 import { createSelector } from 'reselect'
 import { connect } from 'react-redux'
 import { get, map, zip, each } from 'lodash'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import styled, { css, keyframes, createGlobalStyle } from 'styled-components'
 import { rgba } from 'polished'
 
@@ -255,7 +255,7 @@ const MapRoutes = connect((state) => ({
   )
 })
 
-const ItemStat = withNamespaces(['others'])(
+const ItemStat = withTranslation(['others'])(
   connect((state) => ({
     itemHistoty: get(state, 'sortie.itemHistory'),
   }))(({ itemHistoty, t }) => {
@@ -282,7 +282,7 @@ const ItemStat = withNamespaces(['others'])(
 )
 
 // Map Reminder
-@withNamespaces()
+@withTranslation()
 @connect(
   createSelector(
     [

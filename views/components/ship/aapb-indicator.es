@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { createSelector } from 'reselect'
 import { memoize, compact, isFinite } from 'lodash'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { Tooltip, Tag, Position, Intent } from '@blueprintjs/core'
 import { compose } from 'redux'
 
@@ -26,7 +26,7 @@ const AAPBSelectorFactory = memoize((shipId) =>
 )
 
 export const AAPBIndicator = compose(
-  withNamespaces(['main']),
+  withTranslation(['main']),
   connect((state, { shipId }) => ({
     AAPB: AAPBSelectorFactory(shipId)(state) || 0,
   })),

@@ -5,7 +5,7 @@ import { createSelector } from 'reselect'
 import { get, map } from 'lodash'
 import moment from 'moment-timezone'
 import FontAwesome from 'react-fontawesome'
-import { withNamespaces, Trans } from 'react-i18next'
+import { withTranslation, Trans } from 'react-i18next'
 import i18next from 'views/env-parts/i18next'
 import { Tag, Position, Intent, Tooltip } from '@blueprintjs/core'
 import { compose } from 'redux'
@@ -183,7 +183,7 @@ const getTagIntent = (_, timeRemaining) => {
 }
 
 const ExpContent = compose(
-  withNamespaces(['main']),
+  withTranslation(['main']),
   connect((state) => ({
     level: get(state, 'info.basic.api_level', 0),
     exp: get(state, 'info.basic.api_experience', 0),
@@ -383,7 +383,7 @@ const numCheckSelector = createSelector([configSelector], (config) => ({
   minSlotNum: get(config, 'poi.mapStartCheck.item.minFreeSlots', 10),
 }))
 
-export const AdmiralPanel = withNamespaces(['main'])(
+export const AdmiralPanel = withTranslation(['main'])(
   connect((state) => ({
     ...admiralInfoSelector(state),
     equipNum: Object.keys(state.info.equips).length,

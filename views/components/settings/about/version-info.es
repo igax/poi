@@ -2,7 +2,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { map, capitalize, memoize, size, throttle, isString, toUpper } from 'lodash'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { Card, Tooltip, AnchorButton, Intent } from '@blueprintjs/core'
 import { shell } from 'electron'
 import { FontAwesomeIcon as FA } from '@fortawesome/react-fontawesome'
@@ -124,7 +124,7 @@ const os = do {
 const today = new Date()
 const aprilFirst = today.getDate() === 1 && today.getMonth() === 3
 
-export const VersionInfo = withNamespaces(['setting'])(({ t }) => (
+export const VersionInfo = withTranslation(['setting'])(({ t }) => (
   <Card>
     <Wrapper>
       <PoiLogo src={`file://${ROOT}/assets/icons/poi.png`} onClick={playPoiAudio} />

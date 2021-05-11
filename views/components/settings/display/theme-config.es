@@ -7,7 +7,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { get, map } from 'lodash'
 import { fileUrl } from 'views/utils/tools'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import {
   HTMLSelect,
   Button,
@@ -70,7 +70,7 @@ const avatarType = [
   { name: 'data:Speed', value: 'speed' },
 ]
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 @connect((state, props) => ({
   theme: get(state.config, 'poi.appearance.theme', 'dark'),
   vibrant: get(state.config, 'poi.appearance.vibrant', 0), // 0: disable, 1: macOS vibrant, 2: custom background

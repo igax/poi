@@ -1,5 +1,5 @@
 import React from 'react'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { FormGroup, Position, Tooltip } from '@blueprintjs/core'
 import { map, size, includes } from 'lodash'
 
@@ -60,7 +60,7 @@ const SWITCHES = [
   },
 ]
 
-export const AdvancedConfig = withNamespaces(['setting'])(({ t }) => (
+export const AdvancedConfig = withTranslation(['setting'])(({ t }) => (
   <Section title={t('Advanced')}>
     <Wrapper>
       <Wrapper>

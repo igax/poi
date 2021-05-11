@@ -1,6 +1,6 @@
 import React from 'react'
 import { FormGroup } from '@blueprintjs/core'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { map, entries } from 'lodash'
 import path from 'path'
 
@@ -16,7 +16,7 @@ const MIRROR_OPTIONS = map(entries(MIRRORS), ([server, { name }]) => ({
   value: server,
 }))
 
-export const PluginConfig = withNamespaces(['setting'])(({ t }) => (
+export const PluginConfig = withTranslation(['setting'])(({ t }) => (
   <Section title={t('Plugin')}>
     <Wrapper>
       <Wrapper>

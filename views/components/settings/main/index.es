@@ -1,5 +1,5 @@
 import React from 'react'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { connect } from 'react-redux'
 import { get } from 'lodash'
 
@@ -14,7 +14,7 @@ import { AccessibilityConfig } from './accessibility-config'
 export const PoiConfig = connect((state) => ({
   refts: get(state, 'layout.webview.refts', 0),
 }))(
-  withNamespaces(['setting'])(({ refts, t }) => (
+  withTranslation(['setting'])(({ refts, t }) => (
     <div>
       <NavigatorBar key={`isolate-game-window: ${refts}`} />
       <LanguageConfig />

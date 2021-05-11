@@ -5,7 +5,6 @@ import { remote } from 'electron'
 import lodash from 'lodash'
 import { init } from '../lib/sentry'
 
-import './polyfills/react-i18next'
 import './polyfills/react-fontawesome'
 import './polyfills/react-bootstrap'
 

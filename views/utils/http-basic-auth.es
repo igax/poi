@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react'
 import { ipcRenderer } from 'electron'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { Dialog, FormGroup, InputGroup, Classes, Button, Intent } from '@blueprintjs/core'
 
 const BALogin = (usr, pwd) => {
   ipcRenderer.send('basic-auth-info', usr, pwd)
 }
 
-@withNamespaces()
+@withTranslation()
 class BasicAuth extends PureComponent {
   state = {
     showModal: false,

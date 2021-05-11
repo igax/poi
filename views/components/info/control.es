@@ -8,7 +8,7 @@ import { Button, Position } from '@blueprintjs/core'
 import { connect } from 'react-redux'
 import { get, padStart } from 'lodash'
 import { gameRefreshPage, gameReload } from 'views/services/utils'
-import { withNamespaces, Trans } from 'react-i18next'
+import { withTranslation, Trans } from 'react-i18next'
 import styled, { css } from 'styled-components'
 import { CustomTag } from 'views/components/etc/custom-tag'
 import { Tooltip } from 'views/components/etc/overlay'
@@ -66,7 +66,7 @@ const formatDate = (date) => do {
   ;`${datePart}T${timePart}`
 }
 
-@withNamespaces()
+@withTranslation()
 @connect((state, props) => ({
   muted: get(state, 'config.poi.content.muted', false),
   editable: get(state, 'config.poi.layout.editable', false),

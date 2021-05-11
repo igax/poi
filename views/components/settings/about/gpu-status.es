@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react'
 import { remote } from 'electron'
 import { Button, Intent } from '@blueprintjs/core'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import { Section } from 'views/components/settings/components/section'
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 export class GPUStatus extends PureComponent {
   getGPUFeatureStatus = remote.require('electron').app.getGPUFeatureStatus
 

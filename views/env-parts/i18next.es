@@ -3,7 +3,7 @@ import path from 'path-extra'
 import glob from 'glob'
 import { toString, each, debounce } from 'lodash'
 import I18next from 'i18next'
-import { reactI18nextModule } from 'react-i18next'
+import { initReactI18next } from 'react-i18next'
 import { format } from 'util'
 import formatJson from 'json-format'
 import { readJSONSync, writeFileSync } from 'fs-extra'
@@ -72,7 +72,7 @@ if (!LOCALES.map((lng) => lng.locale).includes(window.language)) {
 
 const i18next = I18next.createInstance()
 
-i18next.use(reactI18nextModule).init({
+i18next.use(initReactI18next).init({
   lng: window.language,
   fallbackLng: false,
   resources: mainPoiRes,

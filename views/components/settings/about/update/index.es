@@ -1,7 +1,7 @@
 /* global config */
 import React from 'react'
 import { FormGroup, Button, Intent } from '@blueprintjs/core'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { remote } from 'electron'
 
 import { checkUpdate } from 'views/services/update'
@@ -20,7 +20,7 @@ config.on('config.set', (path, value) => {
   }
 })
 
-export const Update = withNamespaces(['setting'])(({ t }) => (
+export const Update = withTranslation(['setting'])(({ t }) => (
   <Section title={t('Update')}>
     <Wrapper>
       <Wrapper>

@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { get, cloneDeep, isEqual } from 'lodash'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { HTMLSelect, FormGroup, Callout, Intent } from '@blueprintjs/core'
 import { compose } from 'redux'
 import styled from 'styled-components'
@@ -24,7 +24,7 @@ const StickyCallout = styled(Callout)`
   background-color: ${(props) => rgba(props.theme.GREEN1, 0.8)} !important;
 `
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 @connect((state) => ({
   use: get(state, 'config.proxy.use', 'none'),
 }))
@@ -77,7 +77,7 @@ export class ProxiesConfig extends Component {
 }
 
 const ConnectionRetries = compose(
-  withNamespaces(['setting']),
+  withTranslation(['setting']),
   connect((state) => ({
     retries: get(state, 'config.proxy.retries', 0),
   })),
@@ -101,7 +101,7 @@ const ConnectionRetries = compose(
 ))
 
 const RelayMode = compose(
-  withNamespaces(['setting']),
+  withTranslation(['setting']),
   connect((state) => {
     const use = get(state, 'config.proxy.use', 'none')
     return {
@@ -145,7 +145,7 @@ const RelayMode = compose(
   </Section>
 ))
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 @connect((state) => ({
   proxy: get(state, 'config.proxy', {}),
 }))

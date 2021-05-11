@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import shallowEqual from 'fbjs/lib/shallowEqual'
 import { createSelector } from 'reselect'
 import { isEqual, pick, omit, memoize, get } from 'lodash'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import { ProgressBar, Tooltip, Position, Tag, Intent } from '@blueprintjs/core'
 import { MaterialIcon } from 'views/components/etc/icon'
 
@@ -70,7 +70,7 @@ const shipRowDataSelectorFactory = memoize((shipId) =>
   ),
 )
 
-@withNamespaces(['main', 'resources'])
+@withTranslation(['main', 'resources'])
 @connect((state, { shipId }) => shipRowDataSelectorFactory(shipId)(state))
 export class ShipRow extends Component {
   static propTypes = {

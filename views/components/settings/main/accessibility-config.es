@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { get, map } from 'lodash'
 import { HTMLSelect } from '@blueprintjs/core'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 
 import { Section } from '../components/section'
 
@@ -20,7 +20,7 @@ const list = [
   'achromatomaly',
 ]
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 @connect((state, props) => ({
   value: get(state.config, 'poi.appearance.colorblindFilter', 'null'),
 }))

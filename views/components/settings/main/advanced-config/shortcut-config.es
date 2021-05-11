@@ -6,7 +6,7 @@ import { ipcRenderer } from 'electron'
 import mousetrap from 'mousetrap'
 import { get } from 'lodash'
 import { Tag, Button, Intent, Dialog, Callout } from '@blueprintjs/core'
-import { withNamespaces } from 'react-i18next'
+import { withTranslation } from 'react-i18next'
 import cls from 'classnames'
 import styled from 'styled-components'
 
@@ -24,7 +24,7 @@ config.on('config.set', (path, value) => {
   }
 })
 
-@withNamespaces(['setting'])
+@withTranslation(['setting'])
 @connect((state, props) => ({
   value: get(state.config, props.configName, props.defaultValue),
   configName: props.configName,

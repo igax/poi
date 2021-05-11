@@ -4,7 +4,7 @@ import { get, map, range, forEach, values, sortBy } from 'lodash'
 import { Tag, Intent, ResizeSensor, Tooltip } from '@blueprintjs/core'
 import { createSelector } from 'reselect'
 import React from 'react'
-import { withNamespaces, Trans } from 'react-i18next'
+import { withTranslation, Trans } from 'react-i18next'
 import styled, { css } from 'styled-components'
 
 import { escapeI18nKey } from 'views/utils/tools'
@@ -236,7 +236,7 @@ const TaskRowBase = connect(
   )
 })
 
-const TaskRow = withNamespaces(['resources'])(
+const TaskRow = withTranslation(['resources'])(
   connect((state, { quest }) => ({
     quest,
     record: get(state, ['info', 'quests', 'records', quest.api_no]),
@@ -291,7 +291,7 @@ const TaskRow = withNamespaces(['resources'])(
   }),
 )
 
-@withNamespaces(['main'])
+@withTranslation(['main'])
 @connect(({ info: { quests: { activeQuests, activeCapacity, activeNum } } }) => ({
   activeQuests,
   activeCapacity,
