@@ -84,7 +84,7 @@ i18next.use(initReactI18next).init({
   returnObjects: true, // allow returning objects
   debug: dbg && dbg.extra('i18next').isEnabled(),
   react: {
-    wait: false,
+    useSuspense: true,
     nsMode: 'fallback',
     usePureComponent: true,
   },
